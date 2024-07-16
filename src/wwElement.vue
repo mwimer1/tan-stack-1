@@ -22,10 +22,13 @@ export default {
       type: Object,
       required: true,
       default: () => ({
-        headers: ["Column 1", "Column 2", "Column 3"],
+        headers: ["Name", "Age", "City", "Occupation"],
         rows: [
-          ["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
-          ["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
+          ["Alice", 28, "New York", "Engineer"],
+          ["Bob", 34, "San Francisco", "Designer"],
+          ["Charlie", 25, "Boston", "Developer"],
+          ["David", 42, "Chicago", "Manager"],
+          ["Eve", 29, "Los Angeles", "Artist"],
         ],
       }),
     },
@@ -63,4 +66,3 @@ export default {
   }
 }
 </style>
-
