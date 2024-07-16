@@ -1,16 +1,52 @@
 export default {
-  editor: {
-    label: {
-      en: "My Element",
-    },
+  inherit: {
+    type: 'ww-text',
+    exclude: ['text'],
   },
+  editor: {
+    label: { en: 'Custom Table', fr: 'Tableau Personnalisé' },
+    icon: 'table',
+    customSettingsPropertiesOrder: [
+      'headers',
+      'rows',
+    ],
+    customStylePropertiesOrder: [
+      'borderColor',
+      'borderWidth',
+      'cellPadding',
+    ],
+  },
+  states: ['hover', 'active'],
+  actions: [{ label: 'Row Click', action: 'onRowClick' }],
+  triggerEvents: [
+    { name: 'rowClick', label: { en: 'On row click' }, event: { row: '' }, default: true },
+  ],
   properties: {
-    textColor: {
-      label: {
-        en: "Text color",
+    headers: {
+      label: { en: 'Headers' },
+      type: 'Array',
+      bindable: true,
+      responsive: true,
+      defaultValue: [],
+      /* wwEditor:start */
+      bindingValidation: {
+        type: 'array',
+        tooltip: 'An array of strings representing table headers',
       },
-      type: "Color",
-      defaultValue: "#F23636",
+      /* wwEditor:end */
+    },
+    rows: {
+      label: { en: 'Rows' },
+      type: 'Array',
+      bindable: true,
+      responsive: true,
+      defaultValue: [],
+      /* wwEditor:start */
+      bindingValidation: {
+        type: 'array',
+        tooltip: 'An array of arrays representing table rows',
+      },
+      /* wwEditor:end */
     },
   },
 };
