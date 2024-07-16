@@ -18,7 +18,17 @@
 <script>
 export default {
   props: {
-    content: { type: Object, required: true },
+    content: {
+      type: Object,
+      required: true,
+      default: () => ({
+        headers: ["Column 1", "Column 2", "Column 3"],
+        rows: [
+          ["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
+          ["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"],
+        ],
+      }),
+    },
   },
   computed: {
     headers() {
@@ -53,3 +63,4 @@ export default {
   }
 }
 </style>
+
