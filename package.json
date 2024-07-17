@@ -6,12 +6,12 @@
     "serve": "weweb serve"
   },
   "dependencies": {
-    "vue": ">=3.2.0",
-    "@tanstack/vue-table": "^8.5.12"
+    "vue": "^3.4.31",
+    "@tanstack/vue-table": "^8.19.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
-    "typescript": "^4.0.5",
+    "typescript": "^5.4.5",
     "@weweb/cli": "latest"
   },
   "browserslist": [
