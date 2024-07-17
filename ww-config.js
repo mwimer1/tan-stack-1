@@ -29,16 +29,28 @@ export default {
       responsive: true,
       defaultValue: [
         {
-          header: 'Name',
+          header: 'First Name',
           accessor: 'firstName',
+        },
+        {
+          header: 'Last Name',
+          accessor: 'lastName',
         },
         {
           header: 'Age',
           accessor: 'age',
         },
         {
-          header: 'Address',
-          accessor: 'address',
+          header: 'Visits',
+          accessor: 'visits',
+        },
+        {
+          header: 'Status',
+          accessor: 'status',
+        },
+        {
+          header: 'Progress',
+          accessor: 'progress',
         },
       ],
       /* wwEditor:start */
@@ -53,7 +65,32 @@ export default {
       type: 'Array',
       bindable: true,
       responsive: true,
-      defaultValue: [],
+      defaultValue: [
+        {
+          firstName: 'tanner',
+          lastName: 'linsley',
+          age: 24,
+          visits: 100,
+          status: 'In Relationship',
+          progress: 50,
+        },
+        {
+          firstName: 'tandy',
+          lastName: 'miller',
+          age: 40,
+          visits: 40,
+          status: 'Single',
+          progress: 80,
+        },
+        {
+          firstName: 'joe',
+          lastName: 'dirte',
+          age: 45,
+          visits: 20,
+          status: 'Complicated',
+          progress: 10,
+        },
+      ],
       /* wwEditor:start */
       bindingValidation: {
         type: 'array',
