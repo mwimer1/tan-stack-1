@@ -4,11 +4,11 @@ export default {
     exclude: ['text'],
   },
   editor: {
-    label: { en: 'Custom Table', fr: 'Tableau Personnalisé' },
+    label: { en: 'TanStack Table', fr: 'Tableau TanStack' },
     icon: 'table',
     customSettingsPropertiesOrder: [
-      'headers',
-      'rows',
+      'columns',
+      'dataSource',
     ],
     customStylePropertiesOrder: [
       'borderColor',
@@ -22,8 +22,34 @@ export default {
     { name: 'rowClick', label: { en: 'On row click' }, event: { row: '' }, default: true },
   ],
   properties: {
-    headers: {
-      label: { en: 'Headers' },
+    columns: {
+      label: { en: 'Columns' },
+      type: 'Array',
+      bindable: true,
+      responsive: true,
+      defaultValue: [
+        {
+          header: 'Name',
+          accessor: 'firstName',
+        },
+        {
+          header: 'Age',
+          accessor: 'age',
+        },
+        {
+          header: 'Address',
+          accessor: 'address',
+        },
+      ],
+      /* wwEditor:start */
+      bindingValidation: {
+        type: 'array',
+        tooltip: 'An array of objects representing table columns',
+      },
+      /* wwEditor:end */
+    },
+    dataSource: {
+      label: { en: 'Data Source' },
       type: 'Array',
       bindable: true,
       responsive: true,
@@ -31,22 +57,9 @@ export default {
       /* wwEditor:start */
       bindingValidation: {
         type: 'array',
-        tooltip: 'An array of strings representing table headers',
+        tooltip: 'An array of objects representing table data',
       },
       /* wwEditor:end */
-    },
-    rows: {
-      label: { en: 'Rows' },
-      type: 'Array',
-      bindable: true,
-      responsive: true,
-      defaultValue: [],
-      /* wwEditor:start */
-      bindingValidation: {
-        type: 'array',
-        tooltip: 'An array of arrays representing table rows',
-      },
-      /* wwEditor:end */
-    },
-  },
+    }
+  }
 };
